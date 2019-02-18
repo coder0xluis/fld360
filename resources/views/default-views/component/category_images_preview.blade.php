@@ -35,12 +35,10 @@
     <div class="cate-head d-flex">
         <h3 class="cate-name float-left">{{$cate['name']}}</h3>
         <div class="d-flex child-cates">
-            @foreach($cate['childs'] as $child_cate)
-                <a class="btn btn-sm btn-link cate-item " href="/category/{{$child_cate['id']}}"
-                   title="{{$child_cate['name']}}">{{$child_cate['name']}}</a>
-            @endforeach
-            {{--<li><a href="" title="">子类目</a></li>--}}
-            {{--<li><a href="" title="">子类目</a></li>--}}
+            {{--@foreach($cate['childs'] as $child_cate)--}}
+                {{--<a class="btn btn-sm btn-link cate-item " href="/category/{{$child_cate['id']}}"--}}
+                   {{--title="{{$child_cate['name']}}">{{$child_cate['name']}}</a>--}}
+            {{--@endforeach--}}
         </div>
         <a class="cate-more btn btn-sm btn-link" href="/category/{{$cate['id']}}" title="{{$cate['name']}}">查看更多</a>
     </div>
