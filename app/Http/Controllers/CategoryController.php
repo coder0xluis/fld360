@@ -26,11 +26,11 @@ class CategoryController extends Controller
             }
         }
 
-        return collect($cates)->sortBy(function($item){
-            if($item['sort'] == 0){
+        return collect($cates)->sortBy(function ($item) {
+            if ($item['sort'] == 0) {
                 return 100;
             }
-        })->values()->all();
+        })->values()->toArray();
     }
 
 
