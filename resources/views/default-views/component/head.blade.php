@@ -8,6 +8,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+                {{dd($categories)}}
 
                 @foreach($categories as $key=>$cate)
                     <li class="nav-item">
