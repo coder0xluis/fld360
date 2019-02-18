@@ -50,14 +50,16 @@
                    href="/category/{{$category['id']}}"
                    title="{{$category['name']}}">全部</a>
             </li>
-            @foreach($category['childs'] as $cate)
-                <li class="nav-item">
-                    <a class="nav-link {{$cate['id']==$current_cid?'disabled':''}}" href="/category/{{$cate['id']}}"
-                       title="{{$cate['name']}}">
-                        {{$cate['name']}}
-                    </a>
-                </li>
-            @endforeach
+            @if(!empty($category['childs']))
+                @foreach($category['childs'] as $cate)
+                    <li class="nav-item">
+                        <a class="nav-link {{$cate['id']==$current_cid?'disabled':''}}" href="/category/{{$cate['id']}}"
+                           title="{{$cate['name']}}">
+                            {{$cate['name']}}
+                        </a>
+                    </li>
+                @endforeach
+            @endif
         </ul>
 
         <div class="row">
