@@ -10,6 +10,7 @@ class CategoryController extends Controller
     function categories()
     {
         $categories = DB::table('category')
+            ->orderByRaw('sort=0', 'desc', 'sort')
             ->get()
             ->keyBy('id');
 
@@ -46,9 +47,6 @@ class CategoryController extends Controller
             ->where('parent_id', $cid)
             ->get();
     }
-
-
-
 
 
 }
