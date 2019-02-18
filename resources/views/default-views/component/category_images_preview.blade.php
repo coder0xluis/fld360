@@ -35,10 +35,12 @@
     <div class="cate-head d-flex">
         <h3 class="cate-name float-left">{{$cate['name']}}</h3>
         <div class="d-flex child-cates">
-            {{--@foreach($cate['childs'] as $child_cate)--}}
-                {{--<a class="btn btn-sm btn-link cate-item " href="/category/{{$child_cate['id']}}"--}}
-                   {{--title="{{$child_cate['name']}}">{{$child_cate['name']}}</a>--}}
-            {{--@endforeach--}}
+            @if(!empty($cate['childs']))
+                @foreach($cate['childs'] as $child_cate)
+                    <a class="btn btn-sm btn-link cate-item " href="/category/{{$child_cate['id']}}"
+                       title="{{$child_cate['name']}}">{{$child_cate['name']}}</a>
+                @endforeach
+            @endif
         </div>
         <a class="cate-more btn btn-sm btn-link" href="/category/{{$cate['id']}}" title="{{$cate['name']}}">查看更多</a>
     </div>
@@ -55,7 +57,8 @@
                         {{$album->title}}
                     </figcaption>
 
-                    <span class="position-absolute pic-count badge badge-secondary m-2 p-1">{{$album->pic_count}}P</span>
+                    <span class="position-absolute pic-count badge badge-secondary m-2 p-1">{{$album->pic_count}}
+                        P</span>
                 </a>
             </figure>
 
