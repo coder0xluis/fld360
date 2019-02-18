@@ -33,7 +33,6 @@
 </style>
 <div class="container cate-preview">
     <div class="cate-head d-flex">
-        {{dd($cate)}}
         <h3 class="cate-name float-left">{{$cate['name']}}</h3>
         <div class="d-flex child-cates">
             @foreach($cate['childs'] as $child_cate)
