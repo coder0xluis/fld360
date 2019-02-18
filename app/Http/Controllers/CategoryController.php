@@ -10,6 +10,7 @@ class CategoryController extends Controller
     function categories()
     {
         $categories = DB::table('category')
+            ->where('is_deleted',0)
             ->orderByRaw('sort=0', 'desc', 'sort')
             ->get()
             ->keyBy('id');
