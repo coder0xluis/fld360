@@ -10,24 +10,27 @@ class CategoryController extends Controller
     function categories()
     {
         $categories = DB::table('category')
-            ->where('is_deleted',0)
-            ->orderByRaw('sort=0', 'desc', 'sort')
-            ->get()
-            ->keyBy('id');
+            ->where('is_deleted', 0)
+            ->get();
+//            ->keyBy('id');
 
-        foreach ($categories as $cate_id => $cate) {
-            if ($cate->parent_id) {
+
+        foreach ($categories as $cate) {
+            $cate_id = $cate->id;
+            if ($cate->parent_id) { //子类目
                 $cates[$cate->parent_id]['childs'][$cate_id] = collect($cate)->toArray();
-
                 $cates[$cate->parent_id]['cate_ids'][] = $cate->id;
-            } else {
+            } else {    //父类目
                 $cates[$cate_id] = collect($cate)->toArray();
-
                 $cates[$cate_id]['cate_ids'][] = $cate_id;
             }
         }
 
-        return $cates;
+        return collect($cates)->sortBy(function($item){
+            if($item['sort'] == 0){
+                return 100;
+            }
+        })->values()->all();
     }
 
 
