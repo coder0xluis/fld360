@@ -55,21 +55,19 @@ class WebController extends Controller
                 collect($this->categories[$cate_id]['childs'])->keys() : [];
             $albums = $AlbumsController->byCategory($subcate_ids);
 
-            $subcates = collect($this->categories[$cate_id]['childs']);
             $category = $this->categories[$cate_id];
         } else {    // 子类目
             $albums = $AlbumsController->byCategory([$cate_id]);
 
             foreach ($this->categories as $cid => $cate) {
                 if (collect($cate['childs'])->has($cate_id)) {
-                    $subcates = collect($cate['childs']);
                     $category = $cate;
                     break;
                 }
             }
         }
 
-        return view('default-views.category', compact('albums', 'category', 'current_cid', 'subcates'));
+        return view('default-views.category', compact('albums', 'category', 'current_cid'));
     }
 
     function album($album_id, $image_id = 0)
