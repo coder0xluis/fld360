@@ -51,7 +51,7 @@ class WebController extends Controller
         $current_cid = $cate_id;
 
         if (collect($this->categories)->has($cate_id)) {    // 当前类目为主目录
-            $subcate_ids = !empty($this->categories[$cate_id]['childs']) ?
+            $subcate_ids = collect($this->categories[$cate_id])->has(childs) ?
                 collect($this->categories[$cate_id]['childs'])->keys() : [];
             $albums = $AlbumsController->byCategory($subcate_ids);
 
