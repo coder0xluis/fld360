@@ -21,6 +21,7 @@
         max-width: 100%;
         height: 260px;
         margin: 0px auto;
+        object-fit: cover;
     }
 
     .categories .pic .pic-title {

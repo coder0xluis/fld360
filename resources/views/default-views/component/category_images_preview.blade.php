@@ -15,6 +15,7 @@
     .cate-preview .pic {
         max-width: 100%;
         height: 255px;
+        object-fit: cover;
     }
 
     .cate-preview .child-cates .cate-item {
@@ -33,7 +34,7 @@
 </style>
 <div class="cate-preview mt-3 mb-3">
     <div class="row cate-head pl-2 pr-2 mb-2 align-items-center">
-        <h4 class="cate-name mb-md-0 mb-2 mr-2">{{$cate['name']}}</h4>
+        <h3 class="cate-name mb-md-0 mb-2 mr-2">{{$cate['name']}}</h3>
         @if(!empty($cate['childs']))
             <ul class="nav">
                 @foreach($cate['childs'] as $child_cate)

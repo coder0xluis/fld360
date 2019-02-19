@@ -68,6 +68,7 @@
         max-width: 100%;
         height: 260px;
         margin: 0 auto;
+        object-fit: cover;
     }
 
     .similar .similar-group a .text-truncate {
@@ -82,7 +83,7 @@
         <div class="col-12 col-md-9">
             <div>
                 <h4>{{$album->title}}</h4>
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" itemprop=breadcrumb>
                     <span>分类：</span>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/category/{{$cate->id}}">{{$cate->name}}</a></li>
