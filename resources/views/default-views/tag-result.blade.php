@@ -20,8 +20,6 @@
 
 </style>
 @section('content')
-    @component('default-views.component.tags')
-    @endcomponent
 
     <div class="tag-result">
         <div class="row mt-4 mb-4">
@@ -44,5 +42,9 @@
         <div class="text-center">
             {{$albums->links()}}
         </div>
+
+
+        @component('default-views.component.tags')
+        @endcomponent
     </div>
 @endsection
