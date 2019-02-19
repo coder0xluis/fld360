@@ -34,7 +34,7 @@ class WebController extends Controller
         foreach ($this->categories as $key => $category) {
             // 获取类目下的图辑
             $albums = DB::table('albums')
-                ->leftJoin('images', 'albums.id', '=', 'images.album_id')
+                ->join('images', 'albums.id', '=', 'images.album_id')
                 ->select('albums.*', DB::raw("count(images.id) as pic_count"))
                 ->groupBy('images.album_id')
                 ->where('images.is_deleted', 0)

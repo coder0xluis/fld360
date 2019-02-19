@@ -100,7 +100,7 @@ class AlbumsController extends Controller
     function byTag($tid)
     {
         $albums = DB::table('albums')
-            ->leftJoin('images', 'albums.id', '=', 'images.album_id')
+            ->join('images', 'albums.id', '=', 'images.album_id')
             ->select('albums.*', 'images.album_id', 'images.url as pic', DB::raw("count('images') as pic_count"))
             ->groupBy('albums.id')
             ->where([
