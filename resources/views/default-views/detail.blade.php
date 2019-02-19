@@ -94,7 +94,7 @@
             </div>
 
             {{--{{dd($album,$images, $image)}}--}}
-            <a href="/album/{{$album->id}}/{{$next_image->id}}" title="{{$album->title}}">
+            <a href="/album/{{$album->id}}/{{$next_image?$next_image->id:''}}" title="{{$album->title}}">
                 <img class="lazyload pic"
                      src="/images/loading.gif"
                      data-src="{{$image->url}}"
