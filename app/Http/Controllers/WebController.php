@@ -87,6 +87,7 @@ class WebController extends Controller
         $album = $data['album'];
         $images = $data['images'];
         $image = $image_id ? $images->keyBy('id')[$image_id] : $images[$image_id];
+        $next_image = $images->has($images->search($image) + 1) ? $images[$images->search($image) + 1] : null;
         $tags = $data['tags']->keyBy('id');
         $cate = $data['cate'];
         $sub_cate = $data['sub_cate'];
@@ -110,7 +111,7 @@ class WebController extends Controller
         $today_albums = $AlbumController->today();
         View::share('today_albums', $today_albums);
 
-        return view('default-views.detail', compact('album', 'images', 'image', 'tags', 'cate', 'sub_cate'));
+        return view('default-views.detail', compact('album', 'images', 'image', 'next_image', 'tags', 'cate', 'sub_cate'));
     }
 
 

@@ -94,12 +94,12 @@
             </div>
 
             {{--{{dd($album,$images, $image)}}--}}
-            {{--<a href="#" title="{{$album->title}}">--}}
-            <img class="lazyload pic"
-                 src="/images/loading.gif"
-                 data-src="{{$image->url}}"
-                 alt="{{$album->title}}">
-            {{--</a>--}}
+            <a href="/album/{{$album->id}}/{{$next_image->id}}" title="{{$album->title}}">
+                <img class="lazyload pic"
+                     src="/images/loading.gif"
+                     data-src="{{$image->url}}"
+                     alt="{{$album->title}}">
+            </a>
 
 
             @if(!$tags->isEmpty())
