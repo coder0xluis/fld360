@@ -86,6 +86,7 @@ class AlbumsController extends Controller
             ->whereIn('cate_id', $cate_ids)
             ->orderBy('created_at','desc')
             ->paginate(18);
+//        dd($albums);
 
         return $albums;
     }

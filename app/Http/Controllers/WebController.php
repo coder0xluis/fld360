@@ -13,8 +13,8 @@ class WebController extends Controller
     public function __construct()
     {
         $CategoryController = new CategoryController();
-        $this->categories = collect($CategoryController->categories())->sortBy(function($item){
-            if($item['sort'] == 0){
+        $this->categories = collect($CategoryController->categories())->sortBy(function ($item) {
+            if ($item['sort'] == 0) {
                 return 100;
             }
             return $item['sort'];
@@ -28,10 +28,6 @@ class WebController extends Controller
 
     public function home()
     {
-
-        /*
-         * ========================================
-         * */
         /*
          * 组装类目图辑数据
          * */
@@ -63,16 +59,17 @@ class WebController extends Controller
             ->where('id', $cate_id)
             ->first();
 
-        if (collect($this->categories)->has($cate_id)) {    // 当前类目为主目录
-            $subcate_ids = collect($this->categories[$cate_id])->has('childs') ?
-                collect($this->categories[$cate_id]['childs'])->keys() : [];
-            $albums = $AlbumsController->byCategory($subcate_ids);
+        $current_cate_obj = collect($this->categories)->keyBy('id');
 
-            $category = $this->categories[$cate_id];
+        if ($current_cate->parent_id == 0) {    // 当前类目为主目录
+            $subcate_ids = collect($current_cate_obj[$cate_id])->has('childs') ?
+                collect($current_cate_obj[$cate_id]['childs'])->keys() : [];
+
+            $albums = $AlbumsController->byCategory($subcate_ids);
+            $category = $current_cate_obj[$cate_id];
         } else {    // 子类目
             $albums = $AlbumsController->byCategory([$cate_id]);
-
-            foreach ($this->categories as $cid => $cate) {
+            foreach ($current_cate_obj as $cid => $cate) {
                 if (collect($cate['childs'])->has($cate_id)) {
                     $category = $cate;
                     break;

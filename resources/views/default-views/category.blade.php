@@ -44,13 +44,11 @@
 @section('content')
     <div class="categories">
         <ul class="nav">
-            {{--{{dd($current_cid ,$category)}}--}}
-
-            <li class="nav-item">
-                <a class="nav-link {{$category['id']==$current_cid?'disabled':''}}"
-                   href="/category/{{$category['id']}}"
-                   title="{{$category['name']}}">全部</a>
-            </li>
+            {{--<li class="nav-item">--}}
+                {{--<a class="nav-link {{$category['id']==$current_cid?'disabled':''}}"--}}
+                   {{--href="/category/{{$category['id']}}"--}}
+                   {{--title="{{$category['name']}}">全部</a>--}}
+            {{--</li>--}}
             @if(!empty($category['childs']))
                 @foreach($category['childs'] as $cate)
                     <li class="nav-item">

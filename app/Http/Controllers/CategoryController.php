@@ -11,15 +11,11 @@ class CategoryController extends Controller
     {
         $categories = DB::table('category')
             ->where('is_deleted', 0)
-//            ->orderBy('sort','asc')
-//            ->orderByRaw('sort=0', 'asc', 'sort')
             ->get()
             ->keyBy('id');
-//        dd($categories);
 
 
         foreach ($categories as $cate) {
-//            dd($cate);
             $cate_id = $cate->id;
             if ($cate->parent_id) { //子类目
                 $cates[$cate->parent_id]['childs'][$cate_id] = collect($cate)->toArray();
