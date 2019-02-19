@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52b046fe-61bc-422c-b670-4a950d0a0bff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/category.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/component/category_images_preview.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/component/category_images_preview.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/tag-result.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/tag-result.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +61,8 @@
       <file leaf-file-name="category_images_preview.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/category_images_preview.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="44" lean-forward="false" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+            <state relative-caret-position="54">
+              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -120,8 +117,8 @@
       <find>childs</find>
       <find>home</find>
       <find>child</find>
-      <find>current</find>
       <find>pic_count</find>
+      <find>current</find>
     </findStrings>
     <replaceStrings>
       <replace>col-2</replace>
@@ -492,12 +489,12 @@
       <workItem from="1549975546335" duration="1539000" />
       <workItem from="1549977284571" duration="483000" />
       <workItem from="1549977787832" duration="65756000" />
-      <workItem from="1550308307854" duration="46537000" />
+      <workItem from="1550308307854" duration="46892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121557000" />
+    <option name="totallyTimeSpent" value="121912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1402" height="860" extended-state="0" />
@@ -932,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/category_images_preview.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="44" lean-forward="false" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        <state relative-caret-position="54">
+          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           <folding />
         </state>
       </provider>

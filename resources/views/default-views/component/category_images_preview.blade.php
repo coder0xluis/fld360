@@ -32,13 +32,13 @@
     }
 </style>
 <div class="cate-preview mt-3 mb-3">
-    <div class="row cate-head pl-2 pr-2 align-items-center">
-        <h4 class="cate-name mb-0 mr-2">{{$cate['name']}}</h4>
+    <div class="row cate-head pl-2 pr-2 mb-2 align-items-center">
+        <h4 class="cate-name mb-md-0 mb-2 mr-2">{{$cate['name']}}</h4>
         @if(!empty($cate['childs']))
             <ul class="nav">
                 @foreach($cate['childs'] as $child_cate)
-                    <li class="nav-item mr-1">
-                        <a class="nav-link text-secondary pl-1 pr-1" href="/category/{{$child_cate['id']}}"
+                    <li class="nav-item mr-1 mr-md-2">
+                        <a class="nav-link text-secondary pl-1 pr-1 small" href="/category/{{$child_cate['id']}}"
                            title="{{$child_cate['name']}}">
                             {{$child_cate['name']}}
                         </a>
@@ -47,7 +47,7 @@
                     {{--title="{{$child_cate['name']}}">{{$child_cate['name']}}</a>--}}
                 @endforeach
                 <li class="nav-item">
-                    <a class="nav-link pl-1 pr-1" href="/category/{{$cate['id']}}"
+                    <a class="nav-link pl-1 pr-1 small" href="/category/{{$cate['id']}}"
                        title="{{$cate['name']}}">查看更多</a>
                 </li>
             </ul>
