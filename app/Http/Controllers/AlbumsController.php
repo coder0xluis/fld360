@@ -77,12 +77,10 @@ class AlbumsController extends Controller
     function byCategory($cate_ids)
     {
         $albums = DB::table('albums')
-            ->leftJoin('images', 'albums.id', '=', 'images.album_id')
-            ->select('albums.*', 'images.album_id', 'images.url as pic', DB::raw("count('images') as pic_count"))
+            ->join('images', 'albums.id', '=', 'images.album_id')
+            ->select('albums.*', DB::raw("count('images') as pic_count"))
             ->groupBy('albums.id')
-            ->where([
-                ['albums.is_deleted', 0],
-            ])
+            ->where('albums.is_deleted', 0)
             ->whereIn('cate_id', $cate_ids)
             ->orderBy('created_at', 'desc')
             ->paginate(18);

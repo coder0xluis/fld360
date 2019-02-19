@@ -28,14 +28,6 @@ class CategoryController extends Controller
         }
 
         return $cates;
-
-//        return collect($cates)->sortBy(function ($item) {
-//            $sort_num = $item['sort'];
-//            if ($item['sort'] == 0) {
-//                $sort_num = 100;
-//            }
-//            return $sort_num;
-//        })->values()->all();
     }
 
 

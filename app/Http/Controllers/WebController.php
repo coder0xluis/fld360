@@ -60,7 +60,6 @@ class WebController extends Controller
             ->first();
 
         $current_cate_obj = collect($this->categories)->keyBy('id');
-
         if ($current_cate->parent_id == 0) {    // 当前类目为主目录
             $subcate_ids = collect($current_cate_obj[$cate_id])->has('childs') ?
                 collect($current_cate_obj[$cate_id]['childs'])->keys() : [];
