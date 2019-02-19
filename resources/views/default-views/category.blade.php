@@ -13,7 +13,7 @@
     }
 
     .categories .pic {
-        background-color: #F5F5F5;
+        /*background-color: #F5F5F5;*/
     }
 
     .categories .pic img {
@@ -44,11 +44,11 @@
 @section('content')
     <div class="categories">
         <ul class="nav">
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link {{$category['id']==$current_cid?'disabled':''}}"--}}
-                   {{--href="/category/{{$category['id']}}"--}}
-                   {{--title="{{$category['name']}}">全部</a>--}}
-            {{--</li>--}}
+            <li class="nav-item">
+                <a class="nav-link {{$category['id']==$current_cid?'disabled':''}}"
+                   href="/category/{{$category['id']}}"
+                   title="{{$category['name']}}">全部</a>
+            </li>
             @if(!empty($category['childs']))
                 @foreach($category['childs'] as $cate)
                     <li class="nav-item">
@@ -69,10 +69,22 @@
                              src="/images/loading.gif"
                              data-src="{{$album->cover}}"
                              alt="{{$album->title}}">
-                        <figcaption class="figure-caption pic-title text-truncate">{{$album->title}}</figcaption>
                         <span class="position-absolute pic-count badge badge-secondary m-2 p-1">{{$album->pic_count}}
                             P</span>
                     </a>
+                    <figcaption class="figure-caption pic-title text-truncate m-2 mt-0 mb-0">
+                        <a class="text-secondary" href="/album/{{$album->id}}"
+                           title="{{$album->title}}">{{$album->title}}</a>
+                    </figcaption>
+
+                    {{--<div class="album-tags text-left">--}}
+                        {{--@if($album->tags)--}}
+                            {{--@foreach($album->tags as $tag)--}}
+                                {{--<a class="btn btn-sm btn-secondary text-truncate p-1" href="/tag/{{$tag->id}}"--}}
+                                   {{--title="{{$tag->name}}">{{$tag->name}}</a>--}}
+                            {{--@endforeach--}}
+                        {{--@endif--}}
+                    {{--</div>--}}
                 </figure>
             @endforeach
         </div>

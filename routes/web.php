@@ -54,3 +54,7 @@ Route::get('albums', 'AlbumsController@getAlbums');
 
 Route::get('albums/recommend', 'AlbumsController@recommend');
 Route::get('albums/today', 'AlbumsController@today');
+
+Route::get('pinfo',function(){
+    phpinfo();
+});

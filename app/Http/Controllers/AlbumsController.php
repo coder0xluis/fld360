@@ -84,10 +84,18 @@ class AlbumsController extends Controller
                 ['albums.is_deleted', 0],
             ])
             ->whereIn('cate_id', $cate_ids)
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at', 'desc')
             ->paginate(18);
-//        dd($albums);
 
+
+        $all_tags = DB::table('tags')->get();
+        foreach ($albums as $key => $album) {
+            if (empty($album->tags)) {
+                continue;
+            }
+            $album_tag = $all_tags->whereIn('id', explode(',', $album->tags))->values();
+            $albums[$key]->tags = $album_tag;
+        }
         return $albums;
     }
 
@@ -101,7 +109,7 @@ class AlbumsController extends Controller
                 ['tags', 'like', "%$tid%"],
                 ['albums.is_deleted', 0],
             ])
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at', 'desc')
             ->paginate(24);
 
         return $albums;
