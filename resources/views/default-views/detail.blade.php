@@ -93,6 +93,7 @@
                 </nav>
             </div>
 
+            {{--{{dd($album,$images, $image)}}--}}
             {{--<a href="#" title="{{$album->title}}">--}}
             <img class="lazyload pic"
                  src="/images/loading.gif"

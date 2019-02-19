@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
           content="海量福利图片每日更新：{{collect($categories)->implode('name',',')}}"/>
+    <meta name="google-site-verification" content="poQyj7ya9cVNTQjcgrVTYBMZt-syMKSpk9gRqyG24jA" />
     <link rel="stylesheet" href="/css/app.css">
 
     <title>@yield('title') - 福利岛</title>

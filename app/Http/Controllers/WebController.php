@@ -84,7 +84,6 @@ class WebController extends Controller
         $AlbumController = new AlbumsController();
         $data = $AlbumController->getAlbumById($album_id, $image_id);
 
-//        dd($data);
         $album = $data['album'];
         $images = $data['images'];
         $image = $image_id ? $images->keyBy('id')[$image_id] : $images[$image_id];
@@ -101,7 +100,6 @@ class WebController extends Controller
             })
             ->take(12)
             ->get();
-//        dd($tags, $similar_albums);
         View::share('similar_albums', $similar_albums);
 
         //推荐图辑
