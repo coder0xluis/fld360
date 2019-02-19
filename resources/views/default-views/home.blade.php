@@ -1,6 +1,6 @@
 @extends('default-views.component.base')
 
-@section('title','home')
+@section('title','福利图片每日更新')
 
 @section('content')
 

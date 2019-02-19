@@ -49,6 +49,9 @@ class WebController extends Controller
     {
         $AlbumsController = new AlbumsController();
         $current_cid = $cate_id;
+        $current_cate = DB::table('category')
+            ->where('id', $cate_id)
+            ->first();
 
         if (collect($this->categories)->has($cate_id)) {    // 当前类目为主目录
             $subcate_ids = collect($this->categories[$cate_id])->has('childs') ?
@@ -67,7 +70,7 @@ class WebController extends Controller
             }
         }
 
-        return view('default-views.category', compact('albums', 'category', 'current_cid'));
+        return view('default-views.category', compact('albums', 'category', 'current_cid', 'current_cate'));
     }
 
     function album($album_id, $image_id = 0)
@@ -112,6 +115,10 @@ class WebController extends Controller
         $AlbumController = new AlbumsController();
         $albums = $AlbumController->byTag($tag_id);
 
-        return view('default-views.tag-result', compact('albums'));
+        $tag = DB::table('tags')
+            ->where('id', $tag_id)
+            ->first();
+
+        return view('default-views.tag-result', compact('albums', 'tag'));
     }
 }

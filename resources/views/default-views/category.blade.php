@@ -1,5 +1,5 @@
 @extends('default-views.component.base')
-
+@section('title',$current_cate->name)
 <style>
     .categories .nav {
         border-bottom: 1px solid #c5c5c5;

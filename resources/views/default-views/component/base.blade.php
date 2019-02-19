@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="/css/app.css">
 
-    <title> @yield('title') - 福利岛</title>
+    <title>@yield('title') - 福利岛</title>
 </head>
 <body>
 @component('default-views.component.head')@endcomponent

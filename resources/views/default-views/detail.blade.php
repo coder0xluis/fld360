@@ -1,5 +1,5 @@
 @extends('default-views.component.base')
-
+@section('title',$album->title)
 <style>
     .detail {
         margin: 25px auto;
@@ -78,7 +78,6 @@
 
 @section('content')
     <div class="row detail">
-        {{--        {{dd()}}--}}
         {{--left area--}}
         <div class="col-9">
             <div>

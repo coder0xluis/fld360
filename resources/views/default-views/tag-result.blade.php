@@ -1,5 +1,5 @@
 @extends('default-views.component.base')
-
+@section('title',$tag->name)
 <style>
     .tag-result .pic img {
         display: block;
