@@ -22,6 +22,53 @@ class WebController extends Controller
 
     public function home()
     {
+        $categories = DB::table('category')
+            ->where('is_deleted', 0)
+            ->orderBy('sort')
+            ->get();
+
+
+        foreach ($categories as $cate) {
+            $cate_id = $cate->id;
+            if ($cate->parent_id) { //子类目
+                $cates[$cate->parent_id]['childs'][$cate_id] = collect($cate)->toArray();
+                $cates[$cate->parent_id]['cate_ids'][] = $cate->id;
+            } else {    //父类目
+                $cates[$cate_id] = collect($cate)->toArray();
+
+                $cates[$cate_id]['cate_ids'][] = $cate_id;
+            }
+        }
+
+        dd($cates);
+        /*
+         * 组装类目图辑数据
+         * */
+        foreach ($categories as $key => $category) {
+
+//            dd($category,$categories->where('parent_id',$category->id)->all());
+            // 获取类目下的图辑
+            $albums = DB::table('albums')
+                ->leftJoin('images', 'albums.id', '=', 'images.album_id')
+                ->select('albums.*', DB::raw("count(images.id) as pic_count"))
+                ->groupBy('images.album_id')
+                ->where('images.is_deleted', 0)
+                ->where('albums.is_deleted', 0)
+//                ->whereIn('albums.cate_id', $categories->where('parent_id',$category->id)->all())
+                ->orderBy('albums.created_at', 'desc')
+                ->take(18)
+                ->get();
+
+//            dd(collect($albums));
+            $categories[$key]->albums = collect($albums);
+        }
+        dd($categories);
+//        $categories->dd();
+
+
+        /*
+         * ========================================
+         * */
         /*
          * 组装类目图辑数据
          * */
