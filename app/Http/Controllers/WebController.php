@@ -13,7 +13,13 @@ class WebController extends Controller
     public function __construct()
     {
         $CategoryController = new CategoryController();
-        $this->categories = $CategoryController->categories();
+        $this->categories = collect($CategoryController->categories())->sortBy(function($item){
+            if($item['sort'] == 0){
+                return 100;
+            }
+            return $item['sort'];
+        })->values()->all();
+
         View::share('categories', $this->categories);
 
         $tags = DB::table('tags')->orderBy('id', 'desc')->get();
@@ -22,6 +28,7 @@ class WebController extends Controller
 
     public function home()
     {
+
         /*
          * ========================================
          * */
