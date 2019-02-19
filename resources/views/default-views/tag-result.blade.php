@@ -25,7 +25,7 @@
     <div class="tag-result">
         <div class="row mt-4 mb-4">
             @foreach($albums as $album)
-                <figure class="col-2 pic-item pl-2 pr-2">
+                <figure class="col-6 col-md-2 pic-item pl-1 pr-1 pl-md-2 pr-md-2">
                     <a class="pic d-block position-relative" href="/album/{{$album->id}}" title="{{$album->title}}">
                         <img class="figure-img lazyload"
                              src="/images/loading.gif"

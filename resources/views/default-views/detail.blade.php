@@ -63,7 +63,7 @@
         padding-right: 6px;
     }
 
-    .similar .similar-group .col-3 a .pic {
+    .similar .similar-group .pic {
         display: block;
         max-width: 100%;
         height: 260px;
@@ -79,7 +79,7 @@
 @section('content')
     <div class="row detail">
         {{--left area--}}
-        <div class="col-9">
+        <div class="col-12 col-md-9">
             <div>
                 <h4>{{$album->title}}</h4>
                 <nav aria-label="breadcrumb">
@@ -149,7 +149,7 @@
                 <h5>相似图片</h5>
                 <div class="row similar-group">
                     @foreach($similar_albums as $album)
-                        <figure class="col-3">
+                        <figure class="col-6 col-md-3 pl-1 pr-1 pl-md-2 pr-md-2">
                             <a href="/album/{{$album->id}}" title="{{$album->title}}">
                                 <img class="figure-img lazyload pic"
                                      src="/images/loading.gif"
@@ -165,7 +165,7 @@
         </div>
 
         {{--right side bar--}}
-        <div class="col-3">
+        <div class="col-12 col-md-3">
             <div class="hot">
                 <h5>推荐图集</h5>
                 <div class="list-group list-group-flush">

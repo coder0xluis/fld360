@@ -64,7 +64,7 @@
 
         <div class="row">
             @foreach($albums as $album)
-                <figure class="pic-item col-2 pl-1 pr-1">
+                <figure class="pic-item col-6 col-md-2 pl-1 pr-1">
                     <a class="pic d-block position-relative" href="/album/{{$album->id}}" title="{{$album->title}}">
                         <img class="figure-img lazyload"
                              src="/images/loading.gif"
