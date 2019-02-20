@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/today">今日更新</a>
+                    <a class="nav-link" href="/today">最新更新</a>
                 </li>
                 @foreach($categories as $key=>$cate)
                     <li class="nav-item">
