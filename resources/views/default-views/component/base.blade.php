@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,6 +13,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134838157-1"></script>
+    <link rel="icon" type="image/x-icon" href="/images/website-icon.png" />
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
