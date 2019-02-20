@@ -113,6 +113,9 @@ class AlbumsController extends Controller
         return $albums;
     }
 
+    /*
+     * 按创建时间降序排列
+     * */
     public function today()
     {
         $today_albums = DB::table('albums')

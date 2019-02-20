@@ -114,7 +114,6 @@ class WebController extends Controller
         return view('default-views.detail', compact('album', 'images', 'image', 'next_image', 'tags', 'cate', 'sub_cate'));
     }
 
-
     function tag($tag_id)
     {
         $AlbumController = new AlbumsController();
@@ -125,5 +124,18 @@ class WebController extends Controller
             ->first();
 
         return view('default-views.tag-result', compact('albums', 'tag'));
+    }
+
+    function today()
+    {
+        $today_albums = DB::table('albums')
+            ->join('images', 'albums.id', '=', 'images.album_id')
+            ->select('albums.*', DB::raw("count('images') as pic_count"))
+            ->where('albums.is_deleted', 0)
+            ->groupBy('albums.id')
+            ->orderBy('albums.created_at', 'DESC')
+            ->paginate(18);
+
+        return view('default-views.today', compact('today_albums'));
     }
 }

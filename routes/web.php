@@ -35,6 +35,13 @@ Route::get('category/{cate_id}', 'WebController@category');
  * */
 Route::get('tag/{tag_id}', 'WebController@tag');
 
+
+/*
+ * 今日更新
+ * */
+Route::get('today', 'WebController@today');
+
+
 Route::get('detail', function () {
     return view('default-views.detail');
 });
@@ -55,6 +62,6 @@ Route::get('albums', 'AlbumsController@getAlbums');
 Route::get('albums/recommend', 'AlbumsController@recommend');
 Route::get('albums/today', 'AlbumsController@today');
 
-Route::get('pinfo',function(){
+Route::get('pinfo', function () {
     phpinfo();
 });
