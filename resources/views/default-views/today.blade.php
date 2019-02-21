@@ -21,7 +21,7 @@
 </style>
 @section('content')
     <div class="today-albums mt-3">
-        <h3 class="mt-4 mb-3">今日更新 </h3>
+        <h3 class="mt-4 mb-3">最近更新 </h3>
         <div class="row">
             @foreach($today_albums as $album)
                 <figure class="pic-item col-6 col-md-2 pl-1 pr-1">
