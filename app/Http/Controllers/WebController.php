@@ -100,6 +100,7 @@ class WebController extends Controller
                         $query->orWhere('tags', 'like', "%$tag_id%");
                     }
                 })
+                ->orderBy('created_at','desc')
                 ->take(12)
                 ->get();
         } else {
