@@ -148,7 +148,7 @@
             </nav>
 
             <div class="container similar">
-                <h5>相似图片</h5>
+                <h5 class="mt-2 mb-2">猜你喜欢</h5>
                 <div class="row similar-group">
                     @foreach($similar_albums as $album)
                         <figure class="col-6 col-md-3 pl-1 pr-1 pl-md-2 pr-md-2">

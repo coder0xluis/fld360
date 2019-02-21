@@ -93,14 +93,19 @@ class WebController extends Controller
         $sub_cate = $data['sub_cate'];
 
         // 相似图片
-        $similar_albums = DB::table('albums')
-            ->where(function ($query) use ($tags) {
-                foreach ($tags->pluck('id')->all() as $tag_id) {
-                    $query->orWhere('tags', 'like', "%$tag_id%");
-                }
-            })
-            ->take(12)
-            ->get();
+        if (!$tags->isEmpty()) {
+            $similar_albums = DB::table('albums')
+                ->where(function ($query) use ($tags) {
+                    foreach ($tags->pluck('id')->all() as $tag_id) {
+                        $query->orWhere('tags', 'like', "%$tag_id%");
+                    }
+                })
+                ->take(12)
+                ->get();
+        } else {
+            $similar_albums = $AlbumController->recommend();
+        }
+
         View::share('similar_albums', $similar_albums);
 
         //推荐图辑
