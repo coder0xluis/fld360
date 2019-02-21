@@ -83,9 +83,9 @@
         <div class="col-12 col-md-9">
             <div>
                 <h4>{{$album->title}}</h4>
-                <nav aria-label="breadcrumb" itemprop=breadcrumb>
+                <nav aria-label="breadcrumb">
                     <span>分类：</span>
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb" itemprop="breadcrumb">
                         <li class="breadcrumb-item"><a href="/category/{{$cate->id}}">{{$cate->name}}</a></li>
                         <li class="breadcrumb-item"><a href="/category/{{$sub_cate->id}}">{{$sub_cate->name}}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{$album->title}}</li>
