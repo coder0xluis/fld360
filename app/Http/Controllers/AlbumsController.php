@@ -33,7 +33,7 @@ class AlbumsController extends Controller
         dd($albums);
     }
 
-    public function getAlbumById($id, $image_id = 0)
+    public function getAlbumById($id)
     {
         // 图辑
         $album = DB::table('albums')
@@ -49,22 +49,20 @@ class AlbumsController extends Controller
             ->first();
 
         // 图辑图片列表
-        $images_query = DB::table('images')
+        $images_paginate = DB::table('images')
             ->where([
                 ['album_id', $album->id],
                 ['is_deleted', 0],
             ])
-            ->orderBy('id');
-        $images = $images_query->get();
-        $images_paginate = $images_query->paginate(1);
-//        dd($images_paginate);
+            ->orderBy('id')
+            ->paginate(1);
 
         // 图辑标签
         $tags = DB::table('tags')
             ->whereIn('id', explode(',', $album->tags))
             ->get();
 
-        return compact('album', 'images','images_paginate', 'tags', 'cate', 'sub_cate');
+        return compact('album', 'images_paginate', 'tags', 'cate', 'sub_cate');
     }
 
 

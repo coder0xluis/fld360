@@ -97,14 +97,14 @@
                 </nav>
             </div>
 
-            {{--{{dd($album,$images, $image)}}--}}
+            {{--{{dd($album, $image)}}--}}
             {{--            {{dd($images_paginate->first())}}--}}
-            <a href="/album/{{$album->id}}/{{$next_image?$next_image->id:''}}" title="{{$album->title}}">
-                <img class="lazyload pic"
-                     src="/images/loading.gif"
-                     data-src="{{$images_paginate->first()->url}}"
-                     alt="{{$album->title}}">
-            </a>
+            {{--<a href="/album/{{$album->id}}/{{$next_image?$next_image->id:''}}" title="{{$album->title}}">--}}
+            <img class="lazyload pic"
+                 src="/images/loading.gif"
+                 data-src="{{$images_paginate->first()->url}}"
+                 alt="{{$album->title}}">
+            {{--</a>--}}
             {{--<p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>--}}
             <div class="text-center mt-1 mt-md-3">
                 {{$images_paginate->links()}}

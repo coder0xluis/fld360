@@ -23,7 +23,7 @@ Route::get('/', 'WebController@home');
 /*
  * 图辑页面
  * */
-Route::get('album/{album_id}/{image_id?}', 'WebController@album');
+Route::get('album/{album_id}', 'WebController@album');
 
 /*
  * 类目页面

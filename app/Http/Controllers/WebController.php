@@ -79,16 +79,13 @@ class WebController extends Controller
         return view('default-views.category', compact('albums', 'category', 'current_cid', 'current_cate'));
     }
 
-    function album($album_id, $image_id = 0)
+    function album($album_id)
     {
         $AlbumController = new AlbumsController();
-        $data = $AlbumController->getAlbumById($album_id, $image_id);
+        $data = $AlbumController->getAlbumById($album_id);
 
         $album = $data['album'];
-        $images = $data['images'];
         $images_paginate = $data['images_paginate'];
-        $image = $image_id ? $images->keyBy('id')[$image_id] : $images[$image_id];
-        $next_image = $images->has($images->search($image) + 1) ? $images[$images->search($image) + 1] : null;
         $tags = $data['tags']->keyBy('id');
         $cate = $data['cate'];
         $sub_cate = $data['sub_cate'];
@@ -118,7 +115,7 @@ class WebController extends Controller
         $today_albums = $AlbumController->today();
         View::share('today_albums', $today_albums);
 
-        return view('default-views.detail', compact('album', 'images','images_paginate', 'image', 'next_image', 'tags', 'cate', 'sub_cate'));
+        return view('default-views.detail', compact('album','images_paginate', 'tags', 'cate', 'sub_cate'));
     }
 
     function tag($tag_id)
