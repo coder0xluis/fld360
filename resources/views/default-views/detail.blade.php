@@ -106,7 +106,9 @@
                      alt="{{$album->title}}">
             </a>
             {{--<p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>--}}
-
+            <div class="text-center mt-1 mt-md-3">
+                {{$images_paginate->links()}}
+            </div>
 
             @if(!$tags->isEmpty())
                 <div class="tags" itemscope>
@@ -119,10 +121,6 @@
                     </div>
                 </div>
             @endif
-
-            <div class="text-center mt-1 mt-md-3">
-                {{$images_paginate->links()}}
-            </div>
 
 
             <div class="container similar">
