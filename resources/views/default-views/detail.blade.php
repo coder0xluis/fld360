@@ -52,18 +52,18 @@
         background: none;
     }
 
-    .similar {
+    .detail .similar {
         font-size: 12px;
         margin-top: 20px;
     }
 
-    .similar .similar-group .col-3 {
+    .detail .similar .similar-group .col-3 {
         margin-top: 10px;
         padding-left: 6px;
         padding-right: 6px;
     }
 
-    .similar .similar-group .pic {
+    .detail .similar .similar-group .pic {
         display: block;
         max-width: 100%;
         height: 260px;
@@ -71,9 +71,13 @@
         object-fit: cover;
     }
 
-    .similar .similar-group a .text-truncate {
+    .detail .similar .similar-group a .text-truncate {
         display: block;
         margin: 7px 3px;
+    }
+
+    .detail .pagination {
+        display: inline-flex;
     }
 </style>
 
@@ -94,12 +98,14 @@
             </div>
 
             {{--{{dd($album,$images, $image)}}--}}
+            {{--            {{dd($images_paginate->first())}}--}}
             <a href="/album/{{$album->id}}/{{$next_image?$next_image->id:''}}" title="{{$album->title}}">
                 <img class="lazyload pic"
                      src="/images/loading.gif"
-                     data-src="{{$image->url}}"
+                     data-src="{{$images_paginate->first()->url}}"
                      alt="{{$album->title}}">
             </a>
+            {{--<p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>--}}
 
 
             @if(!$tags->isEmpty())
@@ -114,38 +120,10 @@
                 </div>
             @endif
 
-            @php
-                $current_page = $images->keyBy('id')->keys()->search($image->id) +1
-            @endphp
+            <div class="text-center mt-1 mt-md-3">
+                {{$images_paginate->links()}}
+            </div>
 
-            <nav class="text-center" aria-label="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item {{$current_page === 1 ? 'disabled':''}}">
-                        <a class="page-link"
-                           href="/album/{{$album->id}}/{{$current_page > 1 ?$images[$current_page-2]->id:''}}"
-                           aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-
-                    @foreach($images as $key=>$img)
-                        <li class="page-item {{$image->id == $img->id ? 'active':''}} ">
-                            <a class="page-link" href="/album/{{$album->id}}/{{$img->id}}">{{$key+1}}</a>
-                        </li>
-                    @endforeach
-
-
-                    <li class="page-item {{$current_page === count($images) ? 'disabled':''}}">
-                        <a class="page-link"
-                           href="/album/{{$album->id}}/{{$current_page < count($images) ?$images[$current_page]->id:''}}"
-                           aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
 
             <div class="container similar">
                 <h5 class="mt-2 mb-2">猜你喜欢</h5>

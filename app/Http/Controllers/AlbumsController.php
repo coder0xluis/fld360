@@ -40,8 +40,6 @@ class AlbumsController extends Controller
             ->where('id', $id)
             ->first();
 
-//        dd($id, $album);
-
         //所属分类
         $sub_cate = DB::table('category')
             ->where('id', $album->cate_id)
@@ -51,20 +49,22 @@ class AlbumsController extends Controller
             ->first();
 
         // 图辑图片列表
-        $images = DB::table('images')
+        $images_query = DB::table('images')
             ->where([
                 ['album_id', $album->id],
                 ['is_deleted', 0],
             ])
-            ->orderBy('id')
-            ->get();
+            ->orderBy('id');
+        $images = $images_query->get();
+        $images_paginate = $images_query->paginate(1);
+//        dd($images_paginate);
 
         // 图辑标签
         $tags = DB::table('tags')
             ->whereIn('id', explode(',', $album->tags))
             ->get();
 
-        return compact('album', 'images', 'tags', 'cate', 'sub_cate');
+        return compact('album', 'images','images_paginate', 'tags', 'cate', 'sub_cate');
     }
 
 
