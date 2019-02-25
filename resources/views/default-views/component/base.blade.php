@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
-          content="海量福利图片每日更新：{{collect($categories)->implode('name',',')}}"/>
+          content="海量福利高清无码图片每日更新：{{collect($categories)->implode('name',',')}}"/>
     <meta name="google-site-verification" content="poQyj7ya9cVNTQjcgrVTYBMZt-syMKSpk9gRqyG24jA"/>
     <link rel="stylesheet" href="/css/app.css">
 
