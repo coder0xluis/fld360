@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="keywords" content="高清,无码,福利,私房,写真,素材,头像,漫画,搞笑,壁纸,风景,帅哥,明星,空姐,人体艺术,美女图片,欧美图片,图片大全,天下美图,好看的图片" />
+    <meta name="keywords" content="高清,无码,福利,私房,写真,素材,头像,漫画,搞笑,壁纸,风景,帅哥,明星,空姐,人体艺术,美女图片,欧美图片,图片大全,天下美图,好看的图片"/>
     <meta name="description"
           content="海量福利高清无码图片每日更新：{{collect($categories)->implode('name',',')}}"/>
     <meta name="google-site-verification" content="poQyj7ya9cVNTQjcgrVTYBMZt-syMKSpk9gRqyG24jA"/>
@@ -14,7 +14,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134838157-1"></script>
-    <link rel="icon" type="image/x-icon" href="/images/website-icon.png" />
+    <link rel="icon" type="image/x-icon" href="/images/website-icon.png"/>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -33,6 +33,10 @@
 <div class="container">
     @yield('content')
 </div>
+
+@component('default-views.component.friend-links')
+@endcomponent
+
 
 @component('default-views.component.foot')
 @endcomponent
