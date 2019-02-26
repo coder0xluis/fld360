@@ -42,6 +42,15 @@ Route::get('tag/{tag_id}', 'WebController@tag');
 Route::get('today', 'WebController@today');
 
 
+/*
+ * 站点地图
+ * */
+Route::get('sitemap.xml', function () {
+    return response(view('sitemap')->render())
+        ->header('Content-Type', 'text/xml');
+});
+
+
 Route::get('detail', function () {
     return view('default-views.detail');
 });
