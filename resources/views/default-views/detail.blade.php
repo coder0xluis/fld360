@@ -96,7 +96,13 @@
                         <li class="breadcrumb-item" itemprop="breadcrumb">
                             <a href="{{url('/category/'.$sub_cate->id)}}" itemprop="relatedLink">{{$sub_cate->name}}</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page" itemprop="mainContentOfPage">{{$album->title}}</li>
+                        <li class="breadcrumb-item active" aria-current="page" itemscope
+                            itemtype="http://schema.org/Thing">
+                            {{$album->title}}
+                            <meta itemprop="name" content="{{$album->title}}">
+                            <meta itemprop="image" content="{{$images_paginate->first()->url}}">
+                            <meta itemprop="url" content="{{url()->current()}}">
+                        </li>
                     </ol>
                 </nav>
             </div>
