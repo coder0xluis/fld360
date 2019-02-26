@@ -97,13 +97,20 @@
                 </nav>
             </div>
 
-            {{--            {{dd($images_paginate->firstItem(), $images_paginate->lastItem(),$images_paginate->perPage(),$images_paginate)}}--}}
-            <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}">
-                <img class="lazyload pic"
-                     src="/images/loading.gif"
-                     data-src="{{$images_paginate->first()->url}}"
-                     alt="{{$album->title}}">
-            </a>
+            <figure itemscope itemtype="http://schema.org/ImageObject">
+                {{--            {{dd($images_paginate->firstItem(), $images_paginate->lastItem(),$images_paginate->perPage(),$images_paginate)}}--}}
+                <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}"
+                   itemprop="url">
+                    <img class="figure-img lazyload pic"
+                         src="/images/loading.gif"
+                         data-src="{{$images_paginate->first()->url}}"
+                         alt="{{$album->title}}">
+                </a>
+                <meta itemprop="name" content="{{$album->title}}">
+                <meta itemprop="image" content="{{$images_paginate->first()->url}}">
+                <meta itemprop="contentUrl" content="{{$images_paginate->first()->url}}">
+                <meta itemprop="datePublished" content="{{$album->created_at}}">
+            </figure>
             <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
             <div class="text-center mt-1 mt-md-3">
                 {{$images_paginate->links()}}
@@ -126,14 +133,22 @@
                 <h5 class="mt-2 mb-2">猜你喜欢</h5>
                 <div class="row similar-group">
                     @foreach($similar_albums as $album)
-                        <figure class="col-6 col-md-3 pl-1 pr-1 pl-md-2 pr-md-2">
-                            <a href="/album/{{$album->id}}" title="{{$album->title}}">
+                        <figure class="col-6 col-md-3 pl-1 pr-1 pl-md-2 pr-md-2" itemscope
+                                itemtype="http://schema.org/ImageObject">
+                            <a href="{{url('/album/'.$album->id)}}" title="{{$album->title}}" itemprop="url">
                                 <img class="figure-img lazyload pic"
                                      src="/images/loading.gif"
                                      data-src="{{$album->cover}}"
                                      alt="{{$album->title}}">
                                 <figcaption
-                                        class="figure-caption text-truncate text-center">{{$album->title}}</figcaption>
+                                        class="figure-caption text-truncate text-center"
+                                        itemprop="name">
+                                    {{$album->title}}
+                                </figcaption>
+
+                                <meta itemprop="image" content="{{$album->cover}}">
+                                <meta itemprop="contentUrl" content="{{$album->cover}}">
+                                <meta itemprop="datePublished" content="{{$album->created_at}}">
                             </a>
                         </figure>
                     @endforeach
@@ -147,8 +162,16 @@
                 <h5>推荐图集</h5>
                 <div class="list-group list-group-flush">
                     @foreach($recommend_albums as $album)
-                        <a href="/album/{{$album->id}}" class="list-group-item text-truncate" title="{{$album->title}}">
-                            {{$album->title}}</a>
+                        <div itemscope itemtype="http://schema.org/ImageObject">
+                            <a href="/album/{{$album->id}}" class="list-group-item text-truncate"
+                               title="{{$album->title}}"
+                               itemprop="url">
+                                {{$album->title}}</a>
+                            <meta itemprop="name" content="{{$album->title}}">
+                            <meta itemprop="image" content="{{$album->cover}}">
+                            <meta itemprop="contentUrl" content="{{$album->cover}}">
+                            <meta itemprop="datePublished" content="{{$album->created_at}}">
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -157,9 +180,17 @@
                 <h5>今日更新</h5>
                 <div class="list-group list-group-flush">
                     @foreach($today_albums as $album)
-                        <a href="/album/{{$album->id}}" class="list-group-item text-truncate" title="{{$album->title}}">
-                            {{$album->title}}
-                        </a>
+                        <div itemscope itemtype="http://schema.org/ImageObject">
+                            <a href="{{url('/album/'.$album->id)}}" class="list-group-item text-truncate"
+                               title="{{$album->title}}"
+                               itemprop="url">
+                                {{$album->title}}
+                            </a>
+                            <meta itemprop="name" content="{{$album->title}}">
+                            <meta itemprop="image" content="{{$album->cover}}">
+                            <meta itemprop="contentUrl" content="{{$album->cover}}">
+                            <meta itemprop="datePublished" content="{{$album->created_at}}">
+                        </div>
                     @endforeach
                 </div>
             </div>
