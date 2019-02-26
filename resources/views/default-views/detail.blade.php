@@ -110,6 +110,7 @@
                 <meta itemprop="image" content="{{$images_paginate->first()->url}}">
                 <meta itemprop="contentUrl" content="{{$images_paginate->first()->url}}">
                 <meta itemprop="datePublished" content="{{$album->created_at}}">
+                <meta itemprop="representativeOfPage" content="True">
             </figure>
             <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
             <div class="text-center mt-1 mt-md-3">
