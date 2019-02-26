@@ -89,10 +89,14 @@
                 <h4>{{$album->title}}</h4>
                 <nav aria-label="breadcrumb">
                     <span>分类：</span>
-                    <ol class="breadcrumb" itemprop="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/category/{{$cate->id}}">{{$cate->name}}</a></li>
-                        <li class="breadcrumb-item"><a href="/category/{{$sub_cate->id}}">{{$sub_cate->name}}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$album->title}}</li>
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/WebPage">
+                        <li class="breadcrumb-item" itemprop="breadcrumb">
+                            <a href="{{url('/category/'.$cate->id)}}" itemprop="relatedLink">{{$cate->name}}</a>
+                        </li>
+                        <li class="breadcrumb-item" itemprop="breadcrumb">
+                            <a href="{{url('/category/'.$sub_cate->id)}}" itemprop="relatedLink">{{$sub_cate->name}}</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page" itemprop="mainContentOfPage">{{$album->title}}</li>
                     </ol>
                 </nav>
             </div>
