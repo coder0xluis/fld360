@@ -1,5 +1,5 @@
 @extends('default-views.component.base')
-@section('title',$album->title)
+@section('title',$album->title.' - '.$sub_cate->name)
 <style>
     .detail {
         margin: 25px auto;
