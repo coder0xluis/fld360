@@ -174,7 +174,7 @@
                 <div class="list-group list-group-flush">
                     @foreach($recommend_albums as $album)
                         <div itemscope itemtype="http://schema.org/ImageObject">
-                            <a href="/album/{{$album->id}}" class="list-group-item text-truncate"
+                            <a href="{{url('/album/'.$album->id)}}" class="list-group-item text-truncate"
                                title="{{$album->title}}"
                                itemprop="url">
                                 {{$album->title}}</a>
