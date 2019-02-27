@@ -107,20 +107,26 @@
                 </nav>
             </div>
 
-            <figure itemscope itemtype="http://schema.org/ImageObject">
+            <figure itemscope itemtype="http://schema.org/ImageGallery">
                 {{--            {{dd($images_paginate->firstItem(), $images_paginate->lastItem(),$images_paginate->perPage(),$images_paginate)}}--}}
-                <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}"
-                   itemprop="url">
+                <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}">
                     <img class="figure-img lazyload pic"
                          src="/images/loading.gif"
                          data-src="{{$images_paginate->first()->url}}"
                          alt="{{$album->title}}">
                 </a>
+                <meta itemprop="url" content="{{url()->current()}}">
                 <meta itemprop="name" content="{{$album->title}}">
-                <meta itemprop="image" content="{{$images_paginate->first()->url}}">
-                <meta itemprop="contentUrl" content="{{$images_paginate->first()->url}}">
+                <meta itemprop="image thumbnailUrl" content="{{$images_paginate->first()->url}}">
+                {{--<meta itemprop="contentUrl" content="{{$images_paginate->first()->url}}">--}}
                 <meta itemprop="datePublished" content="{{$album->created_at}}">
-                <meta itemprop="representativeOfPage" content="True">
+                @if(!$tags->isEmpty())
+                    <meta itemprop="keywords" content="{{$sub_cate->name.','.$tags->implode('name',',')}}">
+                @endif
+                @if($images_paginate->hasMorePages())
+                    <meta itemprop="relatedLink" content="{{$images_paginate->nextPageUrl()}}">
+                @endif
+
             </figure>
             <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
             <div class="text-center mt-1 mt-md-3">
@@ -128,12 +134,14 @@
             </div>
 
             @if(!$tags->isEmpty())
-                <div class="tags" itemscope>
+                <div class="tags">
                     <span>标签：</span>
-                    <div class="tags-group" itemprop="keywords">
+                    <div class="tags-group">
                         @foreach($tags as $tag)
-                            <a class="btn btn-info btn-sm text-white" href="/tag/{{$tag->id}}" rel="tag"
-                               itemprop="tag" title="{{$tag->name}}">{{$tag->name}}</a>
+                            <a class="btn btn-info btn-sm text-white" href="{{url('/tag/'.$tag->id)}}" rel="tag"
+                               title="{{$tag->name}}">
+                                {{$tag->name}}
+                            </a>
                         @endforeach
                     </div>
                 </div>
@@ -153,11 +161,11 @@
                                      alt="{{$album->title}}">
                                 <figcaption
                                         class="figure-caption text-truncate text-center"
-                                        itemprop="name">
+                                        itemprop="name caption">
                                     {{$album->title}}
                                 </figcaption>
 
-                                <meta itemprop="image" content="{{$album->cover}}">
+                                <meta itemprop="image thumbnail" content="{{$album->cover}}">
                                 <meta itemprop="contentUrl" content="{{$album->cover}}">
                                 <meta itemprop="datePublished" content="{{$album->created_at}}">
                             </a>
@@ -178,8 +186,8 @@
                                title="{{$album->title}}"
                                itemprop="url">
                                 {{$album->title}}</a>
-                            <meta itemprop="name" content="{{$album->title}}">
-                            <meta itemprop="image" content="{{$album->cover}}">
+                            <meta itemprop="name caption" content="{{$album->title}}">
+                            <meta itemprop="image thumbnail" content="{{$album->cover}}">
                             <meta itemprop="contentUrl" content="{{$album->cover}}">
                             <meta itemprop="datePublished" content="{{$album->created_at}}">
                         </div>
@@ -197,8 +205,8 @@
                                itemprop="url">
                                 {{$album->title}}
                             </a>
-                            <meta itemprop="name" content="{{$album->title}}">
-                            <meta itemprop="image" content="{{$album->cover}}">
+                            <meta itemprop="name caption" content="{{$album->title}}">
+                            <meta itemprop="image thumbnail" content="{{$album->cover}}">
                             <meta itemprop="contentUrl" content="{{$album->cover}}">
                             <meta itemprop="datePublished" content="{{$album->created_at}}">
                         </div>

@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="keywords" content="高清,无码,福利,私房,写真,素材,头像,漫画,搞笑,壁纸,风景,帅哥,明星,空姐,人体艺术,美女图片,欧美图片,图片大全,天下美图,好看的图片"/>
+    <meta name="keywords"
+          content="高清,无码,福利,私房照,写真,性感写真,素材,头像,微信头像,情侣头像,qq头像,女生头像,漫画,搞笑,壁纸,电脑壁纸,手机壁纸,风景,帅哥,明星,空姐,人体艺术,美女图片,欧美图片,图片大全,天下美图,好看的图片"/>
     <meta name="description"
           content="海量福利高清无码图片每日更新：{{collect($categories)->implode('name',',')}}"/>
     <meta name="google-site-verification" content="poQyj7ya9cVNTQjcgrVTYBMZt-syMKSpk9gRqyG24jA"/>
