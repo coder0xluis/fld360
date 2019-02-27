@@ -1,9 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" itemscope itemtype="http://schema.org/WPHeader">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{url('/')}}">
             福利岛
-            <meta itemprop="name" content="福利岛">
-            <meta itemprop="url" content="{{url('/')}}">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,12 +10,12 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item" itemprop="name">
-                    <a class="nav-link" href="{{url('/today')}}" itemprop="url">最近更新</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/today')}}">最近更新</a>
                 </li>
                 @foreach($categories as $key=>$cate)
-                    <li class="nav-item" itemprop="name">
-                        <a class="nav-link" href="{{url('/category/'.$cate['id'])}}" itemprop="url">{{$cate['name']}}</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/category/'.$cate['id'])}}">{{$cate['name']}}</a>
                     </li>
                 @endforeach
 

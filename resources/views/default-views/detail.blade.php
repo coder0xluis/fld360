@@ -87,28 +87,39 @@
         <div class="col-12 col-md-9">
             <div>
                 <h4>{{$album->title}}</h4>
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <span>分类：</span>
-                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/WebPage">
-                        <li class="breadcrumb-item" itemprop="breadcrumb">
-                            <a href="{{url('/category/'.$cate->id)}}" itemprop="relatedLink">{{$cate->name}}</a>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope
+                            itemtype="http://schema.org/ListItem">
+                            <a href="{{url('/category/'.$cate->id)}}">
+                                {{$cate->name}}
+                            </a>
+                            <meta itemprop="item" content="{{url('/category/'.$cate->id)}}">
+                            <meta itemprop="name" content="{{$cate->name}}">
+                            <meta itemprop="position" content="1"/>
                         </li>
-                        <li class="breadcrumb-item" itemprop="breadcrumb">
-                            <a href="{{url('/category/'.$sub_cate->id)}}" itemprop="relatedLink">{{$sub_cate->name}}</a>
+                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope
+                            itemtype="http://schema.org/ListItem">
+                            <a href="{{url('/category/'.$sub_cate->id)}}">
+                                {{$sub_cate->name}}
+                            </a>
+                            <meta itemprop="item" content="{{url('/category/'.$sub_cate->id)}}">
+                            <meta itemprop="name" content="{{$sub_cate->name}}">
+                            <meta itemprop="position" content="2"/>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page" itemscope
-                            itemtype="http://schema.org/Thing">
+                        <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope
+                            itemtype="http://schema.org/ListItem">
                             {{$album->title}}
+                            <meta itemprop="item" content="{{url()->current()}}">
                             <meta itemprop="name" content="{{$album->title}}">
-                            <meta itemprop="image" content="{{$images_paginate->first()->url}}">
-                            <meta itemprop="url" content="{{url()->current()}}">
+                            <meta itemprop="position" content="3"/>
                         </li>
                     </ol>
                 </nav>
             </div>
 
             <figure itemscope itemtype="http://schema.org/ImageGallery">
-                {{--            {{dd($images_paginate->firstItem(), $images_paginate->lastItem(),$images_paginate->perPage(),$images_paginate)}}--}}
                 <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}">
                     <img class="figure-img lazyload pic"
                          src="/images/loading.gif"
