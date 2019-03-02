@@ -90,15 +90,17 @@
                 <nav aria-label="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                     <span>分类：</span>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item" itemprop="itemListElement" itemscope
-                            itemtype="http://schema.org/ListItem">
-                            <a href="{{url('/category/'.$cate->id)}}">
-                                {{$cate->name}}
-                            </a>
-                            <meta itemprop="item" content="{{url('/category/'.$cate->id)}}">
-                            <meta itemprop="name" content="{{$cate->name}}">
-                            <meta itemprop="position" content="1"/>
-                        </li>
+                        @if(!empty($cate))
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope
+                                itemtype="http://schema.org/ListItem">
+                                <a href="{{url('/category/'.$cate->id)}}">
+                                    {{$cate->name}}
+                                </a>
+                                <meta itemprop="item" content="{{url('/category/'.$cate->id)}}">
+                                <meta itemprop="name" content="{{$cate->name}}">
+                                <meta itemprop="position" content="1"/>
+                            </li>
+                        @endif
                         <li class="breadcrumb-item" itemprop="itemListElement" itemscope
                             itemtype="http://schema.org/ListItem">
                             <a href="{{url('/category/'.$sub_cate->id)}}">
@@ -106,7 +108,11 @@
                             </a>
                             <meta itemprop="item" content="{{url('/category/'.$sub_cate->id)}}">
                             <meta itemprop="name" content="{{$sub_cate->name}}">
-                            <meta itemprop="position" content="2"/>
+                            @if(!empty($cate))
+                                <meta itemprop="position" content="2"/>
+                            @else
+                                <meta itemprop="position" content="1"/>
+                            @endif
                         </li>
                         <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope
                             itemtype="http://schema.org/ListItem">

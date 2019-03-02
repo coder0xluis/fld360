@@ -84,6 +84,7 @@ class WebController extends Controller
         $AlbumController = new AlbumsController();
         $data = $AlbumController->getAlbumById($album_id);
 
+//        dd($data);
         $album = $data['album'];
         $images_paginate = $data['images_paginate'];
         $tags = $data['tags']->keyBy('id');
