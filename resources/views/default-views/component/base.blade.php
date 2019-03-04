@@ -26,6 +26,15 @@
         gtag('config', 'UA-134838157-1');
     </script>
 
+    {{--google adsense--}}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-0602636427871603",
+            enable_page_level_ads: true
+        });
+    </script>
+
     <title>@yield('title') - 福利岛</title>
 </head>
 <body>
