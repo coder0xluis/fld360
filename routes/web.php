@@ -51,6 +51,15 @@ Route::get('sitemap.xml', function () {
 });
 
 
+/*
+ * 访客测试
+ * */
+Route::get('visitor/{promoter?}','VisitorController@test');
+Route::get('visitor1/{promoter?}','VisitorController@test1');
+
+
+
+
 Route::get('detail', function () {
     return view('default-views.detail');
 });
