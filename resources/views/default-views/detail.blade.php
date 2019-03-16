@@ -145,10 +145,13 @@
                 @endif
 
             </figure>
-            <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
+            @if($images_paginate->hasMorePages())
+                <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
+            @endif
             <div class="text-center mt-1 mt-md-3">
                 {{$images_paginate->links()}}
             </div>
+
 
             @if(!$tags->isEmpty())
                 <div class="tags">
