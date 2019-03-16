@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+//        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
     ],
 
     /*
@@ -225,7 +225,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
+//        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
     ],
 
 ];
