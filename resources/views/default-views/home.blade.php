@@ -13,6 +13,9 @@
     @component('default-views.component.tags')
     @endcomponent
 
+
+    @component('default-views.component.friend-links')
+    @endcomponent
 @endsection
 
 

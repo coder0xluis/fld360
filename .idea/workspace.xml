@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52b046fe-61bc-422c-b670-4a950d0a0bff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/component/base.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/component/base.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/default-views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/default-views/home.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,18 +29,28 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/default-views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="133" column="20" lean-forward="true" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+            <state relative-caret-position="134">
+              <caret line="227" column="54" lean-forward="false" selection-start-line="227" selection-start-column="54" selection-end-line="227" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friend-links.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/default-views/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friend-links.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -53,6 +64,16 @@
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/base.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,7 +152,6 @@
         <option value="$PROJECT_DIR$/resources/views/default-views/component/friend-links.php" />
         <option value="$PROJECT_DIR$/resources/views/default-views/tag-result.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/default-views/today.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/default-views/home.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/sitemap.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
@@ -140,7 +160,6 @@
         <option value="$PROJECT_DIR$/resources/views/default-views/component/tags.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WebController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/default-views/component/base.blade.php" />
         <option value="$PROJECT_DIR$/config/tracker.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" />
@@ -150,6 +169,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PromoterController.php" />
         <option value="$PROJECT_DIR$/resources/views/default-views/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/default-views/component/base.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/default-views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -582,12 +603,12 @@
       <workItem from="1551109999550" duration="21931000" />
       <workItem from="1551407593156" duration="144000" />
       <workItem from="1551496249385" duration="8112000" />
-      <workItem from="1552129316405" duration="8192000" />
+      <workItem from="1552129316405" duration="8886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193895000" />
+    <option name="totallyTimeSpent" value="194589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="112" y="23" width="1328" height="877" extended-state="0" />
@@ -797,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/default-views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -874,14 +888,6 @@
             <element signature="e#3943#4247#0#PHP" expanded="false" />
             <element signature="e#4253#4693#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/base.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,18 +1023,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/default-views/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="133" column="20" lean-forward="true" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/friend-links.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/default-views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="134">
+          <caret line="227" column="54" lean-forward="false" selection-start-line="227" selection-start-column="54" selection-end-line="227" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/default-views/component/base.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/default-views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
           <folding />
         </state>
       </provider>
