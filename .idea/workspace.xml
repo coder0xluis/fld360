@@ -33,9 +33,15 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/default-views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="128" column="111" lean-forward="false" selection-start-line="128" selection-start-column="111" selection-end-line="128" selection-end-column="111" />
-              <folding />
+            <state relative-caret-position="189">
+              <caret line="125" column="18" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+              <folding>
+                <element signature="e#1966#3973#0#HTML" expanded="false" />
+                <element signature="e#5783#5803#0#HTML" expanded="true" />
+                <element signature="e#5999#6481#0#HTML" expanded="false" />
+                <element signature="e#6515#7953#0#HTML" expanded="false" />
+                <element signature="e#8384#8404#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -587,12 +593,12 @@
       <workItem from="1551109999550" duration="21931000" />
       <workItem from="1551407593156" duration="144000" />
       <workItem from="1551496249385" duration="8112000" />
-      <workItem from="1552129316405" duration="10221000" />
+      <workItem from="1552129316405" duration="11848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195924000" />
+    <option name="totallyTimeSpent" value="197551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1398" height="877" extended-state="6" />
@@ -1039,9 +1045,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/default-views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="128" column="111" lean-forward="false" selection-start-line="128" selection-start-column="111" selection-end-line="128" selection-end-column="111" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="125" column="18" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+          <folding>
+            <element signature="e#1966#3973#0#HTML" expanded="false" />
+            <element signature="e#5783#5803#0#HTML" expanded="true" />
+            <element signature="e#5999#6481#0#HTML" expanded="false" />
+            <element signature="e#6515#7953#0#HTML" expanded="false" />
+            <element signature="e#8384#8404#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

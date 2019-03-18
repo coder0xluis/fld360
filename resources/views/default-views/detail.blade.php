@@ -132,6 +132,8 @@
                          data-src="{{$images_paginate->first()->url}}"
                          alt="{{$album->title}}">
                 </a>
+
+
                 <meta itemprop="url" content="{{url()->current()}}">
                 <meta itemprop="name" content="{{$album->title}}">
                 <meta itemprop="image thumbnailUrl" content="{{$images_paginate->first()->url}}">
@@ -140,6 +142,7 @@
                 @if(!$tags->isEmpty())
                     <meta itemprop="keywords" content="{{$sub_cate->name.','.$tags->implode('name',',')}}">
                 @endif
+
                 @if($images_paginate->hasMorePages())
                     <meta itemprop="relatedLink" content="{{$images_paginate->nextPageUrl()}}">
                 @endif
@@ -148,7 +151,14 @@
             @if($images_paginate->hasMorePages())
                 <p class="small text-dark text-center mt-2">点击图片可浏览下一页</p>
             @endif
+
+
             <div class="text-center mt-1 mt-md-3">
+                <div class="text-center">
+                    <iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=283&l=ur1&category=hpc&banner=1A1RPH84SECHP1F4ZC82&f=ifr&linkID=9a4ac322575f88aa645ccc9650e52329&t=fld360-23&tracking_id=fld360-23"
+                            width="650" height="45" scrolling="no" border="0" marginwidth="0" style="border:none;"
+                            frameborder="0"></iframe>
+                </div>
                 {{$images_paginate->links()}}
             </div>
 
@@ -197,6 +207,12 @@
 
         {{--right side bar--}}
         <div class="col-12 col-md-3">
+
+            <div class="text-center mb-md-3">
+                <iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=12&l=ur1&category=hpc&banner=1V2JRJ1839H3AW9EXF02&f=ifr&linkID=bb3e6b1fe24d86910bd17a3cec340f54&t=fld360-23&tracking_id=fld360-23"
+                        width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;"
+                        frameborder="0"></iframe>
+            </div>
             <div class="hot">
                 <h5>推荐图集</h5>
                 <div class="list-group list-group-flush">
