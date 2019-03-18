@@ -56,8 +56,14 @@ class WebController extends Controller
         $AlbumsController = new AlbumsController();
         $current_cid = $cate_id;
         $current_cate = DB::table('category')
-            ->where('id', $cate_id)
+            ->where([
+                'id' => $cate_id,
+                'is_deleted' => 0
+            ])
             ->first();
+        if (!$current_cate) {
+            return redirect('/', 302);
+        }
 
         $current_cate_obj = collect($this->categories)->keyBy('id');
         if ($current_cate->parent_id == 0) {    // 当前类目为主目录
@@ -99,7 +105,7 @@ class WebController extends Controller
                         $query->orWhere('tags', 'like', "%$tag_id%");
                     }
                 })
-                ->orderBy('created_at','desc')
+                ->orderBy('created_at', 'desc')
                 ->take(12)
                 ->get();
         } else {
@@ -116,7 +122,7 @@ class WebController extends Controller
         $today_albums = $AlbumController->today();
         View::share('today_albums', $today_albums);
 
-        return view('default-views.detail', compact('album','images_paginate', 'tags', 'cate', 'sub_cate'));
+        return view('default-views.detail', compact('album', 'images_paginate', 'tags', 'cate', 'sub_cate'));
     }
 
     function tag($tag_id)
