@@ -14,8 +14,8 @@
     @endcomponent
 
 
-    @component('default-views.component.friend-links')
-    @endcomponent
+    {{--@component('default-views.component.friend-links')--}}
+    {{--@endcomponent--}}
 @endsection
 
 
