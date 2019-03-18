@@ -48,8 +48,8 @@
             @endforeach
         </div>
 
-        <div class="text-center m-4">
-            {{$today_albums->links()}}
+        <div class="mt-4 mb-4">
+            {{$today_albums->onEachSide(1)->links()}}
         </div>
     </div>
 @endsection

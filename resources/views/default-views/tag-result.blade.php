@@ -46,7 +46,7 @@
         </div>
 
         <div class="text-center">
-            {{$albums->links()}}
+            {{$albums->onEachSide(1)->links()}}
         </div>
 
 

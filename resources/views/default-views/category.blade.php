@@ -89,8 +89,8 @@
             @endforeach
         </div>
 
-        <div class="text-center">
-            {{$albums->links()}}
+        <div class="">
+            {{$albums->onEachSide(1)->links()}}
         </div>
 
     </div>
