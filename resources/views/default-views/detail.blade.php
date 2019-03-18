@@ -126,7 +126,7 @@
             </div>
 
             <figure itemscope itemtype="http://schema.org/ImageGallery">
-                <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :$images_paginate->url(1)}}">
+                <a href="{{$images_paginate->hasMorePages() ? $images_paginate->nextPageUrl() :url()->current()}}">
                     <img class="figure-img lazyload pic"
                          src="/images/loading.gif"
                          data-src="{{$images_paginate->first()->url}}"
