@@ -156,11 +156,11 @@
             <div class="text-center mt-1 mt-md-3">
                 {{--亚马逊广告banner 650*45--}}
                 {{--移动端不展示--}}
-                <div class="text-center d-none d-md-block">
-                    <iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=283&l=ur1&category=hpc&banner=1A1RPH84SECHP1F4ZC82&f=ifr&linkID=9a4ac322575f88aa645ccc9650e52329&t=fld360-23&tracking_id=fld360-23"
-                            width="650" height="45" scrolling="no" border="0" marginwidth="0" style="border:none;"
-                            frameborder="0"></iframe>
-                </div>
+                {{--<div class="text-center d-none d-md-block">--}}
+                    {{--<iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=283&l=ur1&category=hpc&banner=1A1RPH84SECHP1F4ZC82&f=ifr&linkID=9a4ac322575f88aa645ccc9650e52329&t=fld360-23&tracking_id=fld360-23"--}}
+                            {{--width="650" height="45" scrolling="no" border="0" marginwidth="0" style="border:none;"--}}
+                            {{--frameborder="0"></iframe>--}}
+                {{--</div>--}}
 
                 {{$images_paginate->onEachSide(1)->links()}}
             </div>
@@ -213,11 +213,11 @@
 
             {{--亚马逊广告banner 300*250--}}
             {{--移动端不展示--}}
-            <div class="text-center mb-md-3 d-none d-md-block">
-                <iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=12&l=ur1&category=hpc&banner=1V2JRJ1839H3AW9EXF02&f=ifr&linkID=bb3e6b1fe24d86910bd17a3cec340f54&t=fld360-23&tracking_id=fld360-23"
-                        width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;"
-                        frameborder="0"></iframe>
-            </div>
+            {{--<div class="text-center mb-md-3 d-none d-md-block">--}}
+                {{--<iframe src="https://rcm-cn.amazon-adsystem.com/e/cm?o=28&p=12&l=ur1&category=hpc&banner=1V2JRJ1839H3AW9EXF02&f=ifr&linkID=bb3e6b1fe24d86910bd17a3cec340f54&t=fld360-23&tracking_id=fld360-23"--}}
+                        {{--width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;"--}}
+                        {{--frameborder="0"></iframe>--}}
+            {{--</div>--}}
 
             <div class="hot">
                 <h5>推荐图集</h5>
