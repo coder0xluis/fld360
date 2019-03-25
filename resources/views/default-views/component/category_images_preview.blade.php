@@ -42,10 +42,9 @@
                         itemtype="http://schema.org/ListItem">
                         <a class="nav-link text-secondary pl-1 pr-1 small"
                            href="{{url('/category/'.$child_cate['id'])}}"
-                           title="{{$child_cate['name']}}">
-                            {{--{{$child_cate['name']}}--}}
+                           title="{{$child_cate['name'] . (str_contains($child_cate['name'],'图片')?'':'图片')}}">
                             {{$child_cate['name'] . (str_contains($child_cate['name'],'图片')?'':'图片')}}
-                            <meta itemprop="name" content="{{$child_cate['name']}}">
+                            <meta itemprop="name" content="{{$child_cate['name'] . (str_contains($child_cate['name'],'图片')?'':'图片')}}">
                             <meta itemprop="item" content="{{url('/category/'.$child_cate['id'])}}">
                             <meta itemprop="position" content="2">
                         </a>
