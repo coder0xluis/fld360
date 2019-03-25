@@ -12,7 +12,7 @@
     <div itemscope>
         @foreach($tags as $tag)
             <a href="{{url('/tag/'.$tag->id)}}" class="tag-item btn btn-secondary btn-sm mr-2 mt-2"
-               rel="tag" title="{{$tag->name}}">{{$tag->name}}</a>
+               rel="tag" title="{{$tag->name}}">{{$tag->name .(str_contains($tag->name,'图片') ? '' : '图片')}}</a>
         @endforeach
     </div>
 </div>

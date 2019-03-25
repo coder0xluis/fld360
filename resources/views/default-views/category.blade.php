@@ -53,8 +53,8 @@
                 @foreach($category['childs'] as $cate)
                     <li class="nav-item">
                         <a class="nav-link {{$cate['id']==$current_cid?'disabled':''}}" href="/category/{{$cate['id']}}"
-                           title="{{$cate['name']}}">
-                            {{$cate['name']}}
+                           title="{{$cate['name'] . (str_contains($cate['name'],'图片')?'':'图片')}}">
+                            {{$cate['name'] . (str_contains($cate['name'],'图片')?'':'图片')}}
                         </a>
                     </li>
                 @endforeach
@@ -78,12 +78,12 @@
                     </figcaption>
 
                     {{--<div class="album-tags text-left">--}}
-                        {{--@if($album->tags)--}}
-                            {{--@foreach($album->tags as $tag)--}}
-                                {{--<a class="btn btn-sm btn-secondary text-truncate p-1" href="/tag/{{$tag->id}}"--}}
-                                   {{--title="{{$tag->name}}">{{$tag->name}}</a>--}}
-                            {{--@endforeach--}}
-                        {{--@endif--}}
+                    {{--@if($album->tags)--}}
+                    {{--@foreach($album->tags as $tag)--}}
+                    {{--<a class="btn btn-sm btn-secondary text-truncate p-1" href="/tag/{{$tag->id}}"--}}
+                    {{--title="{{$tag->name}}">{{$tag->name}}</a>--}}
+                    {{--@endforeach--}}
+                    {{--@endif--}}
                     {{--</div>--}}
                 </figure>
             @endforeach
